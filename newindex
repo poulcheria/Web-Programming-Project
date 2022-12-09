@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>New HTML</title> <!--tab title-Log In--> 
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+   <!--log in form inside a div for easier manipulation--> 
+
+           <h2 id="title">bizzzzzzzzzzz</h2> 
+            
+            
+        <script src="script.js"></script>
+</body>
+</html>
+
