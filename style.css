@@ -1,6 +1,6 @@
 
 /* log in style*/
- body {
+body {
     background-color: rgb(56, 54, 54)
     
   }
@@ -120,3 +120,44 @@ li a:hover {
 }
 
 #map { height: 600px; }
+
+.topnav::after {
+    content:"";
+    display: table;
+    clear :both;
+    
+
+}
+
+
+/* my account */
+
+
+
+
+.forminput{
+    width: 40%;
+    height: 15px;
+    margin:auto;
+    size: 10px;
+    text-align:  center;
+    font-size: 22px;
+    font-family: Helvetica;
+
+
+}
+
+#edit-button{
+    width: 20%;
+    height: 50px;
+    margin: auto;
+    margin-top: 20px;
+    margin-left: 0%;
+    background-color: #285430;
+    color: white;
+    border-radius: 15px;
+    font-size: 16px;
+    font-family: Helvetica;
+    box-shadow: 10px 10px 8px #888888;
+    align-self: center;
+}
