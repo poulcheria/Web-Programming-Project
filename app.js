@@ -2,17 +2,22 @@ const express= require('express');
 const exphbs= require('express-handlebars');
 const bodyParser = require('body-parser');
 const path = require('path');
+const cors= require('cors');
 
-const express= require('express');
-const exphbs= require('express-handlebars');
-const bodyParser = require('body-parser');
-const path = require('path');
+
 
 const app = express();
+app.use(cors());
+
+
 const { Sequelize, DataTypes } = require('sequelize');
 
 
+// parse application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({ extended: false }));
 
+// parse application/json
+app.use(bodyParser.json());
 
 
 const sequelize = new Sequelize('database_name', 'username', 'password', {
@@ -123,6 +128,22 @@ const Items = sequelize.define('items', {
     }
   });
 
+  const Users = sequelize.define('users', {
+    id: {
+      type: Sequelize.INTEGER,
+      autoIncrement: true,
+      primaryKey: true
+    },
+    name: {
+      type: Sequelize.STRING,
+    },
+    email: {
+      type: Sequelize.STRING,
+    },
+    password: {
+      type: Sequelize.STRING,
+    }
+  });
   // one item has many prices
   Items.hasMany(Prices, { as: 'prices', foreignKey: 'item_id' });
 
@@ -143,27 +164,22 @@ const Items = sequelize.define('items', {
       console.error('Unable to connect to the database:', err);
     });
   
-  //server
-  const PORT = process.env.PORT || 4242;
   
-  app.listen(PORT, console.log(`Server started on port ${PORT}`));     
-  
-
   const fs = require('fs');
 
 
 
 
-  const dataitems = JSON.parse(fs.readFileSync('items.json', 'utf8'));
+  //const dataitems = JSON.parse(fs.readFileSync('items.json', 'utf8'));
   
   //console.log(dataitems);
   // Products.bulkCreate(dataitems.).then(() => console.log("Products have been saved"));
   // Categories.bulkCreate(dataitems["categories"]).then(() => console.log("Categories have been saved"));
 
-  
+  /*
   Items.bulkCreate(dataitems)
       .then(() => {
-          console.log("Items have been saved------------------------------")
+          console.log("Items have been saved----------------------------------------------------------------------------------------------------")
           console.log(Items[0].id);
         })
       .catch(error => {
@@ -173,7 +189,7 @@ const Items = sequelize.define('items', {
   
   const dataprices=JSON.parse(fs.readFileSync('prices.json', 'utf8'));
 
- 
+ */
   
   // Use your models in your Express.js routes
 /*app.get('/users', (req, res) => {
@@ -182,4 +198,88 @@ const Items = sequelize.define('items', {
   })
 })*/
  
+
+//signup-------
+app.post('/signup', (req, res) => {
+  console.log(req.body);
+  const { name, email, password } = req.body;
+  
+  Users.create({ name, email, password })
+    .then(() => {
+      res.json({ success: true });
+    })
+    .catch((error) => {
+      console.error(error);
+      res.json({ success: false, error: error.message });
+    });
+});
+
+//login------
+app.post('/login', (req, res) => {
+  const {name,email, password} = req.body;
+  Users.findOne({
+    where: {
+      name,
+      email,
+      password
+    }
+  })
+  .then(user => {
+    if (user) {
+      // user exists, log them in
+      res.send({success: true});
+      console.log('User found');
+      //window.location.href='http://127.0.0.1:4242/Map.html';
+      
+    }else {
+      // user does not exist, show error message
+      res.send({success: false});
+      console.log('User does not exist')
+    }
+  })
+});
+
+
+//myaccount-----
+app.post('/myaccount', (req, res) => {
+  console.log(req.body);
+  const { name, email, password } = req.body;
+
+  Users.update({ name, email, password }, { where: { id: 1} })
+    .then(() => {
+      res.json({ success: true });
+    })
+    .catch((error) => {
+      console.error(error);
+      res.json({ success: false, error: error.message });
+    });
+});
+
+
+// Set up an API endpoint to retrieve the data
+app.get('/myaccount', (req, res) => {
+  const {name,email, password} = req.query;
+  Users.findOne({ name, email, password }, { where: { id: 1} })
+    .then((users) => {
+      console.log(users);
+      res.json({ success: true, users: users });
+      
+    })
+    .catch((error) => {
+      console.error(error);
+      res.json({ success: false, error: error.message });
+    });
+});
+
+
+
+
+
+
+
+
+//server
+const PORT = process.env.PORT || 4242;
+  
+app.listen(PORT, console.log(`Server started on port ${PORT}`));     
 
