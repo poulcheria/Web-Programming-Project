@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Home</title> <!--tab title-Log In--> 
+<link rel="stylesheet"  href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin="" />
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="topnav">
+   
+        <ul class="nav">
+            <li><a href="Map.html">Home</a></li>
+            <li><a href="leaderboard.html">Leaderboard</a></li>
+            <li><a href="myaccount.html">My Account</a></li>
+            <li><input id="search-input"  placeholder="Search.."></li>
+            <li ><button id="search-button">Submit</button></li>
+            <li ><button id="logOut-button" onclick="logOut()">Log Out</button></li>
+           <!-- <form id="filter-form">
+                <label for="category">Category:</label>
+                <select id="category">
+                  <option value="Όλα">Όλα</option>
+                  <option value="Βρεφικά Είδη">Βρεφικά Είδη</option>
+                  <option value="Καθαριότητα">Καθαριότητα</option>
+                  <option value="Τρόφιμα">Τρόφιμα</option>
+                  <option value="Ποτά - Αναψυκτικά">Ποτά - Αναψυκτικά</option>
+                 
+                </select>
+                <button id="category-button" type="button" onclick="searchCategory()">filter</button>-->
+            </form>
+        </ul>
+
+    </div>
+
+    <div id="map"></div>
+
+        
+        <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js" integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
+        <!--<script src="htdocs/webmap101/script.js" type="text/javascript" ></script>-->
+        <script src="script.js"></script>
+        <script src="LogOut.js"></script>
+</body>
+</html>
