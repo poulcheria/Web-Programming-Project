@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Admin Items</title> <!--tab title-Log In--> 
+<link rel="stylesheet" href="style.css">
+<style>
+    h1{
+    margin-top: 20px;
+    text-align: center;
+    font-family: Helvetica;
+  }
+    #logout-button{
+
+      float: right;
+      padding:  8px;;
+      border-radius: 10px;
+      border-style: solid;
+      margin: 10px;
+      background: #ddd;
+      font-size: 17px;
+      border: none;
+      cursor: pointer;
+      margin-left: 1100px;
+    }
+
+     #logout-button:hover{
+      background-color: #A4BE7B;
+      color: black;
+     }
+  
+  
+  </style>
+</head>
+<body>
+    <div class="topnav">
+   
+        <ul class="nav">
+          <li><a href="adminitems.html">Items</a></li>
+          <li><a href="adminpois.html">POIS</a></li>
+          <li ><button id="logout-button" onclick="logOut()">Log Out</button></li>
+        </ul>
+
+    </div>
+    <h1>Create Items</h1>
+    <form id="create-item-form">
+        <label for="id">Id:</label>
+        <input type="text" id="id" name="id" required>
+        <br>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        <br>
+        <label for="category_name">Category:</label>
+        <input type="text" id="category_name" name="category_name" required>
+        <br>
+        <label for="subcategory_name">Subcategory:</label>
+        <input type="text" id="subcategory_name" name="subcategory_name" required>
+        <br>
+        <label for="category">Category id:</label>
+        <input type="text" id="category" name="category" required>
+        <br>
+        <label for="subcategory">Subcategory id:</label>
+        <input type="text" id="subcategory" name="subcategory" required>
+      </form>
+    
+   
+     <button id="create-item-button">Create Item</button>
+
+     <h1>Update Items</h1>
+     <form id="update-item-form">
+        <label for="id">Id:</label>
+        <input type="text" id="id" name="id" required>
+        <br>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        <br>
+        <label for="category_name">Category:</label>
+        <input type="text" id="category_name" name="category_name" required>
+        <br>
+        <label for="subcategory_name">Subcategory:</label>
+        <input type="text" id="subcategory_name" name="subcategory_name" required>
+        <br>
+        <label for="category">Category id:</label>
+        <input type="text" id="category" name="category" required>
+        <br>
+        <label for="subcategory">Subcategory id:</label>
+        <input type="text" id="subcategory" name="subcategory" required>
+      </form>
+    
+   
+     <button id="update-item-button">Update Item</button>
+
+
+    <h1>Items</h1>
+    <table id="adminitems-table">
+      <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Category</th>
+        <th>Subcategory</th>
+        <th>Category id</th>
+        <th>Subcategory id</th>
+      </tr>
+    </table>
+  
+    
+    
+    <script src="script_adminitems.js"></script>
+    <script src="LogOut.js"></script>
+ 
+</html>

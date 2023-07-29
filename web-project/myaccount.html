@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>My account</title> <!--tab title-Log In--> 
+<link rel="stylesheet"  href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin="" />
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="topnav">
+   
+        <ul class="nav">
+            <li><a href="Map.html">Home</a></li>
+           
+            <li><a href="leaderboard.html">Leaderboard</a></li>
+            <li><a href="myaccount.html">My Account</a></li>
+            <!--<li><input id="search-input"  placeholder="Search.."></li>-->
+            <!--<li ><button id="search-button">Submit</button></li>-->
+        </ul>
+
+    </div>
+
+    
+    <form id="Myaccount">
+    
+        <h3>Username:</h3> 
+        <input type="username" id="username" name="username" placeholder='username' >
+      
+        <h3>Email:</h3>
+        <input type="email" id="email" name="email"  placeholder="email">
+        
+        <h3>Password:</h3>
+        <input type="password" id="password" name="password"  placeholder="password">
+        
+    </br>
+        <button id="edit-button" type="submit" >Edit account</button>
+       
+    </form>
+    </br>
+     
+    <div id="user-data"></div>
+    
+  
+      
+    
+
+
+      <script src="script_myaccount.js"></script>
+
+
+
+
+
+
+
+</body>
+</html>

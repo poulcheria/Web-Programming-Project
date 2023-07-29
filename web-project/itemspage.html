@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Items</title> <!--tab title-Log In--> 
+<link rel="stylesheet" href="style.css">
+<style>
+  body {
+    text-align: center;
+  }
+  table {
+    margin: 0 auto;
+    border-collapse: collapse;
+    border-radius: 5px;
+    overflow: hidden;
+    width: 700px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+
+  }
+  td, th {
+    padding: 10px;
+    border: 1px solid black;
+    text-align: center;
+    font-family: sans-serif;
+    font-size: 1em;
+
+  }
+  th {
+    background-color: #333;
+    color: white;
+    font-size: 1.2em;
+  }
+  td {
+    background-color: #eee;
+  }
+
+  #search-input{
+    width: 25%;
+    margin-left :100px;
+  }
+  #filter-form{
+
+    font-size: 16px;
+  font-family: Helvetica;
+  }
+  #filter-button{
+  
+  
+  padding:  8px;
+  border-radius: 10px;
+  border-style: solid;
+  background: #ddd;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+
+
+}
+
+#filter-button:hover{
+  background-color: #A4BE7B;
+  color: black;
+
+}
+
+#search-input{
+  width: 30%;
+    height: 30px;
+    border-radius: 15px;
+    border-style: solid;
+    border-color: black;
+    margin-left: 25%;
+    
+    margin-top: 10px;
+    
+}
+
+
+</style>
+
+
+
+
+
+
+
+
+
+</head>
+<body>
+    <div class="topnav">
+   
+        <ul class="nav">
+            <li><a href="Map.html">Home</a></li>
+            <li><a href="leaderboard.html">Leaderboard</a></li>
+            <li><a href="myaccount.html">My Account</a></li>
+           
+        </ul>
+
+    </div>
+
+
+
+    <form id="filter-form">
+        <label for="category">Category:</label>
+        <select id="category">
+          <option value="Όλα">Όλα</option>
+          <option value="Βρεφικά Είδη">Βρεφικά Είδη</option>
+          <option value="Καθαριότητα">Καθαριότητα</option>
+          <option value="Τρόφιμα">Τρόφιμα</option>
+          <option value="Ποτά - Αναψυκτικά">Ποτά - Αναψυκτικά</option>
+          <!-- add options for each category here -->
+        </select>
+        <label for="subcategory">Subcategory:</label>
+        <select id="subcategory">
+          <option value="Όλα">Όλα</option>
+          <option value="Απορρυπαντικά">Απορρυπαντικά</option>
+          <option value="Αυγά">Αυγά</option>
+          <option value="Βρεφικές τροφές">Βρεφικές τροφές</option>
+          <option value="Είδη κουζίνας - Μπάνιου">Είδη κουζίνας - Μπάνιου</option>
+          <option value="Κρασία">Κρασία</option>
+          <option value="Μπύρες">Μπύρες</option>
+          <option value="Πάνες">Πάνες</option>
+          <option value="Αλεύρι - Σιμιγδάλι">Αλεύρι - Σιμιγδάλι</option>
+          
+          <!-- add options for each subcategory here -->
+        </select>
+        <button type="button" onclick="searchCategory()" id="filter-button">Filter</button>
+        <input id="search-input"   placeholder="Search..">
+        <button type="button" onclick="searchProduct()" id="search-button">Search</button>
+      </form>
+      
+
+    <h1>Items</h1>
+    <table id="items-table">
+      <tr>
+        <th>Name</th>
+        <th>Category</th>
+        <th>Subcategory</th>
+        
+      </tr>
+    </table>
+  
+
+
+    <script src="script_itemspage.js"></script>
+    
+</body>
+</html>
