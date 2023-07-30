@@ -20,7 +20,7 @@ The aim of this project is to create a user-friendly e-katanalotis collaborative
 ## Getting Started  
 To run the **Web-Programming-Project**, follow the steps below:
 1. **Installation**:
-    * Clone this repository to your local machine.
+    - Clone this repository to your local machine.
 3. **Python Scripts**:
    -Before starting the web application, ensure that you have Python installed on your system.
    -Run the required Python scripts to process data and generate necessary JSON and GeoJSON files. These scripts are responsible for generating items.json, prices.json, and new_data.geojson, which contain the stores' products, product prices, and store/POI information, respectively.
