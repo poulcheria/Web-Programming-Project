@@ -12,6 +12,23 @@ The aim of this project is to create a user-friendly e-katanalotis collaborative
 
 **Parallel Use with Existing Tools**: works in parallel with existing platforms like e-katanalotis, enhancing the range of available product data.  
 
+## Map View and Store Offers
+The system provides an interactive map view that enhances the user's shopping experience. Here's how it works:
+
+1. **User-Centric Map Display**
+The map automatically centers on the user's current location and showcases stores with active offers. Users can easily explore nearby supermarkets and find attractive deals based on their proximity.
+
+2. **Store Search and Filtering**
+To facilitate store discovery, users can search and filter stores by name. When a specific store name is entered, markers are displayed on the map, indicating stores with matching names and active offers. This feature streamlines the process of finding preferred stores and relevant deals.
+
+3. **Offer Details on Click**
+Upon clicking on a store's marker, a pop-up window appears, presenting comprehensive offer details. Users can view product names, prices, icons (indicating offer status), entry dates, likes/dislikes, and stock availability (yes/no). This clear display empowers users to make informed purchasing decisions.
+
+4. **Evaluate and Rate Offers**
+When users are within a 50-meter radius of a store, they have the opportunity to evaluate offers by clicking on the corresponding marker's pop-up window. A "Rating" button allows them to access a dedicated page displaying the list of offers for that store. Users can rate and submit new offers, further enriching the collaborative system with valuable insights.
+
+The map view and store offer functionalities combine to create a dynamic and user-friendly environment, promoting efficient shopping and collaborative information sharing among users.
+
 ## Technologies Used
 **Frontend**: HTML, CSS, JavaScript.  
 **Backend**: Node.js.  
